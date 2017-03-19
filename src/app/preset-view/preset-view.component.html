@@ -1,0 +1,10 @@
+<div class="container">
+  <div #presetcontainer class="row">
+
+    <app-preset *ngFor="let item of presets"
+      [id]="item.id"
+      [title]="item.name">
+    </app-preset>
+
+  </div>
+</div>
