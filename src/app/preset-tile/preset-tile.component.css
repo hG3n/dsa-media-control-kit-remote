@@ -1,0 +1,142 @@
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
+.preset-widget {
+  border: 1px solid #ECEDED;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.preset-widget-container {
+  background: #2F2F2F;
+}
+
+.preset-title {
+  color: #ECEDED;
+}
+
+.play-button-container {
+  width: 100%;
+  padding-left: auto;
+  padding-right: auto;
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-button {
+  border: 4px solid #ECEDED;
+  border-radius: 50%;
+  background: transparent;
+  height: 90px;
+  width: 90px;
+  outline: none;
+}
+
+.play-button:focus,
+.play-button:hover,
+.play-button:active,
+.play-button:visited
+{
+  outline: none;
+  background: transparent;
+}
+
+.glyphicon-play {
+  font-size: 60px;
+  color: #ECEDED;
+}
+
+.glyphicon-pause {
+  font-size: 50px;
+  color: #ECEDED;
+}
+
+.preset-status {
+  color: #eceded;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.preset-volume {
+  color: #eceded;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/**
+ * click animation
+ */
+.anim-circle {
+  text-align: center;
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+}
+
+.play-anim{
+  -webkit-animation: bar .5s ease-in-out; /* Safari 4+ */
+  -moz-animation:    bar .5s ease-in-out; /* Fx 5+ */
+  -o-animation:      bar .5s ease-in-out; /* Opera 12+ */
+  animation:         bar .5s ease-in-out; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes bar {
+  0%   { opacity: 0; transform: scale(0,0);}
+  50%  { opacity: 1; transform: scale(4,4);}
+  100% { opacity: 0; transform: scale(4,4);}
+}
+@-moz-keyframes bar {
+  0%   { opacity: 0; transform: scale(0,0);}
+  50%  { opacity: 1; transform: scale(4,4);}
+  100% { opacity: 0; transform: scale(4,4);}
+}
+@-o-keyframes bar {
+  0%   { opacity: 0; transform: scale(0,0);}
+  50%  { opacity: 1; transform: scale(4,4);}
+  100% { opacity: 0; transform: scale(4,4);}
+}
+@keyframes bar {
+  0%   { opacity: 0; transform: scale(0,0);}
+  50%  { opacity: 1; transform: scale(4,4);}
+  100% { opacity: 0; transform: scale(4,4);}
+}
+
+/**
+ * pulse animation
+ */
+
+.pulse-animate {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@-webkit-keyframes pulse {
+  0%   { background-color: rgba(34,177,76, 0.7);}
+  50%  { background-color: rgba(34,177,76, 1);}
+  100% { background-color: rgba(34,177,76, 0.7);}
+}
+@-moz-keyframes pulse {
+  0%   { background-color: rgba(34,177,76, 0.7);}
+  50%  { background-color: rgba(34,177,76, 1);}
+  100% { background-color: rgba(34,177,76, 0.7);}
+}
+@-o-keyframes pulse {
+  0%   { background-color: rgba(34,177,76, 0.7);}
+  50%  { background-color: rgba(34,177,76, 1);}
+  100% { background-color: rgba(34,177,76, 0.7);}
+}
+@keyframes pulse {
+  0%   { background-color: rgba(34,177,76, 0.7);}
+  50%  { background-color: rgba(34,177,76, 1);}
+  100% { background-color: rgba(34,177,76, 0.7);}
+}

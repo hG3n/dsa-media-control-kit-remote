@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PresetComponent } from './preset.component';
 
-describe('PresetComponent', () => {
+describe('PresetTileComponent', () => {
   let component: PresetComponent;
   let fixture: ComponentFixture<PresetComponent>;
 

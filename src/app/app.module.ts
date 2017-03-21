@@ -6,13 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PresetViewComponent } from './preset-view/preset-view.component';
 import {AlertModule} from "ng2-bootstrap";
-import { PresetComponent } from './preset/preset.component';
+import { PresetTileComponent } from './preset-tile/preset-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PresetViewComponent,
-    PresetComponent
+    PresetTileComponent
   ],
   imports: [
     BrowserModule,
