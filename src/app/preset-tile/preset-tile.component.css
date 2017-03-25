@@ -17,6 +17,10 @@ div {
   color: #ECEDED;
 }
 
+.preset-title h3 {
+  margin-top: 15px;
+}
+
 .play-button-container {
   width: 100%;
   padding-left: auto;
@@ -51,7 +55,7 @@ div {
   color: #ECEDED;
 }
 
-.glyphicon-pause {
+.glyphicon-stop {
   font-size: 50px;
   color: #ECEDED;
 }
@@ -84,11 +88,11 @@ div {
   position: absolute;
 }
 
-.play-anim{
-  -webkit-animation: bar .5s ease-in-out; /* Safari 4+ */
-  -moz-animation:    bar .5s ease-in-out; /* Fx 5+ */
-  -o-animation:      bar .5s ease-in-out; /* Opera 12+ */
-  animation:         bar .5s ease-in-out; /* IE 10+, Fx 29+ */
+.play-click-anim{
+  -webkit-animation: bar .8s ease-in-out; /* Safari 4+ */
+  -moz-animation:    bar .8s ease-in-out; /* Fx 5+ */
+  -o-animation:      bar .8s ease-in-out; /* Opera 12+ */
+  animation:         bar .8s ease-in-out; /* IE 10+, Fx 29+ */
 }
 
 @-webkit-keyframes bar {
@@ -116,8 +120,8 @@ div {
  * pulse animation
  */
 
-.pulse-animate {
-  animation: pulse 2s infinite ease-in-out;
+.play-pulse-animate {
+  animation: pulse 1.6s infinite ease-in-out;
 }
 
 @-webkit-keyframes pulse {

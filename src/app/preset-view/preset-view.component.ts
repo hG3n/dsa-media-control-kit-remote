@@ -1,18 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PresetViewRequestHandlerService} from "../services/preset-view-request-handler.service";
 
 @Component({
   selector: 'app-preset-view',
   templateUrl: './preset-view.component.html',
-  styleUrls: ['./preset-view.component.css']
+  styleUrls: ['./preset-view.component.css'],
+  providers: [PresetViewRequestHandlerService]
 })
 export class PresetViewComponent implements OnInit {
 
-  private presets: any[] = [ { id: 123, name: "Regen" }, { id: 123, name: "Schmiede" }, { id: 123, name: "Reise" }, { id: 123, name: "Hodor" }, { id: 123, name: "Gefahr" }, { id: 123, name: "Pups" } ];
+  private request_handler: PresetViewRequestHandlerService;
 
-  constructor() { }
+  private data_ready: boolean;
+  private error_message: any;
 
+  private presets: any;
+
+  /**
+   * c'tor
+   * @param rh
+   */
+  constructor(rh: PresetViewRequestHandlerService) {
+    this.request_handler = rh;
+  }
+
+  /**
+   * on init lifecycle hook
+   */
   ngOnInit() {
+    this.getViewElements();
+  }
 
+  /**
+   * request view elements
+   */
+  private getViewElements() {
+    this.request_handler.requestTileList()
+      .subscribe(
+        data => {
+          console.log(data);
+          if (data) {
+            this.data_ready = true;
+            this.presets = data;
+          }
+        },
+        error => {
+          console.log(error);
+          this.error_message = <any>error;
+        }
+      )
   }
 
 }

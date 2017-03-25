@@ -20,7 +20,7 @@ import { PresetTileComponent } from './preset-tile/preset-tile.component';
     HttpModule,
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,9 +4,9 @@ import {Observable} from "rxjs";
 import {RequestHandlerService} from "./request-handler.service";
 
 @Injectable()
-export class TileRequestHandlerService extends RequestHandlerService{
+export class TileRequestHandlerService extends RequestHandlerService {
 
-  private base_url: string;
+  private base_url: string = "http://192.168.1.108:8080/";
 
   constructor(http: Http) {
     super(http);
@@ -18,11 +18,9 @@ export class TileRequestHandlerService extends RequestHandlerService{
    * @returns {Observable<Response>}
    */
   public requestPlay(tile_id: string): Observable<Response> {
-    let url: string;
-    let body: {};
-    return this.sendPostRequest(url, body);
+    let url: string = this.base_url + "preset?play=" + tile_id;
+    return this.sendGetRequest(url);
   }
-
 
   /**
    * send request to pause the selected tile
@@ -30,18 +28,16 @@ export class TileRequestHandlerService extends RequestHandlerService{
    * @returns {Observable<Response>}
    */
   public requestPause(tile_id: string): Observable<Response> {
-    let url: string;
-    let body: {};
-    return this.sendPostRequest(url, body);
+    let url: string = this.base_url + "preset?stop=" + tile_id;
+    return this.sendGetRequest(url);
   }
-
 
   /**
    * request tile status from server
    * @returns {Observable<Response>}
    */
-  public requestStatus() {
-    let url: string;
+  public requestStatus(tile_id: string) {
+    let url: string = this.base_url + "preset?is_playing=" + tile_id;
     return this.sendGetRequest(url);
   }
 

@@ -1,0 +1,192 @@
+{
+    "scene": {
+        "scene_rect": {
+            "height": 608,
+            "width": 1045,
+            "x": 0,
+            "y": 0
+        },
+        "tiles": [
+            {
+                "data": {
+                    "name": "Echoes",
+                    "playlist": [
+                        {
+                            "id": 1781,
+                            "name": "01Echoes_PrePro.mp3",
+                            "path": "C:/Users/Basti-Laptop/Music/spark_gig/01Echoes_PrePro.mp3",
+                            "relative_path": "/spark_gig/01Echoes_PrePro.mp3",
+                            "type": 1
+                        }
+                    ],
+                    "position": [
+                        111,
+                        78
+                    ],
+                    "settings": {
+                        "interval_flag": true,
+                        "loop_flag": true,
+                        "max_interval_val": 0,
+                        "min_interval_val": 0,
+                        "name": "Echoes",
+                        "order": 0,
+                        "volume": 100
+                    },
+                    "size": 1,
+                    "uuid": "{7da1148f-d069-4822-8fb5-15a1103694aa}"
+                },
+                "type": "TwoD::PlaylistPlayerTile"
+            },
+            {
+                "data": {
+                    "name": "Carry",
+                    "playlist": [
+                        {
+                            "id": 1782,
+                            "name": "02Carry the day_instrumental.mp3",
+                            "path": "C:/Users/Basti-Laptop/Music/spark_gig/02Carry the day_instrumental.mp3",
+                            "relative_path": "/spark_gig/02Carry the day_instrumental.mp3",
+                            "type": 1
+                        }
+                    ],
+                    "position": [
+                        253,
+                        78
+                    ],
+                    "settings": {
+                        "interval_flag": true,
+                        "loop_flag": true,
+                        "max_interval_val": 0,
+                        "min_interval_val": 0,
+                        "name": "Carry",
+                        "order": 0,
+                        "volume": 100
+                    },
+                    "size": 1,
+                    "uuid": "{d7a15427-9c04-4bcb-a37e-d2c43834a5be}"
+                },
+                "type": "TwoD::PlaylistPlayerTile"
+            },
+            {
+                "data": {
+                    "name": "Justin",
+                    "playlist": [
+                        {
+                            "id": 1783,
+                            "name": "03Justin Finity_PrePro.mp3",
+                            "path": "C:/Users/Basti-Laptop/Music/spark_gig/03Justin Finity_PrePro.mp3",
+                            "relative_path": "/spark_gig/03Justin Finity_PrePro.mp3",
+                            "type": 1
+                        }
+                    ],
+                    "position": [
+                        400,
+                        80
+                    ],
+                    "settings": {
+                        "interval_flag": true,
+                        "loop_flag": true,
+                        "max_interval_val": 0,
+                        "min_interval_val": 0,
+                        "name": "Justin",
+                        "order": 0,
+                        "volume": 100
+                    },
+                    "size": 1,
+                    "uuid": "{c55f6d50-84dc-4ac7-bdaf-7f609a03959f}"
+                },
+                "type": "TwoD::PlaylistPlayerTile"
+            },
+            {
+                "data": {
+                    "name": "Prog",
+                    "playlist": [
+                        {
+                            "id": 1784,
+                            "name": "04ProgsongNEU.mp3",
+                            "path": "C:/Users/Basti-Laptop/Music/spark_gig/04ProgsongNEU.mp3",
+                            "relative_path": "/spark_gig/04ProgsongNEU.mp3",
+                            "type": 1
+                        }
+                    ],
+                    "position": [
+                        108,
+                        218
+                    ],
+                    "settings": {
+                        "interval_flag": true,
+                        "loop_flag": true,
+                        "max_interval_val": 0,
+                        "min_interval_val": 0,
+                        "name": "Prog",
+                        "order": 0,
+                        "volume": 100
+                    },
+                    "size": 1,
+                    "uuid": "{ac678ed5-4d58-4104-89d5-1f00dc75bbb6}"
+                },
+                "type": "TwoD::PlaylistPlayerTile"
+            },
+            {
+                "data": {
+                    "name": "Twin",
+                    "playlist": [
+                        {
+                            "id": 1785,
+                            "name": "05Twinspark_PrePro.mp3",
+                            "path": "C:/Users/Basti-Laptop/Music/spark_gig/05Twinspark_PrePro.mp3",
+                            "relative_path": "/spark_gig/05Twinspark_PrePro.mp3",
+                            "type": 1
+                        }
+                    ],
+                    "position": [
+                        253,
+                        217
+                    ],
+                    "settings": {
+                        "interval_flag": true,
+                        "loop_flag": true,
+                        "max_interval_val": 0,
+                        "min_interval_val": 0,
+                        "name": "Twin",
+                        "order": 0,
+                        "volume": 100
+                    },
+                    "size": 1,
+                    "uuid": "{c536f81f-b86c-431a-8cbd-365e404c95d7}"
+                },
+                "type": "TwoD::PlaylistPlayerTile"
+            },
+            {
+                "data": {
+                    "name": "TheEnd",
+                    "playlist": [
+                        {
+                            "id": 1786,
+                            "name": "06TheEnd_PrePro.mp3",
+                            "path": "C:/Users/Basti-Laptop/Music/spark_gig/06TheEnd_PrePro.mp3",
+                            "relative_path": "/spark_gig/06TheEnd_PrePro.mp3",
+                            "type": 1
+                        }
+                    ],
+                    "position": [
+                        398,
+                        217
+                    ],
+                    "settings": {
+                        "interval_flag": true,
+                        "loop_flag": true,
+                        "max_interval_val": 0,
+                        "min_interval_val": 0,
+                        "name": "TheEnd",
+                        "order": 0,
+                        "volume": 100
+                    },
+                    "size": 1,
+                    "uuid": "{51719257-5440-44a5-937a-d3c1b726071f}"
+                },
+                "type": "TwoD::PlaylistPlayerTile"
+            }
+        ]
+    }
+}

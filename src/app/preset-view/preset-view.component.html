@@ -1,10 +1,14 @@
 <div class="container">
   <div #presetcontainer class="row">
 
-    <app-preset *ngFor="let item of presets"
-      [id]="item.id"
-      [title]="item.name">
-    </app-preset>
+    <div *ngIf="data_ready">
+      <app-preset
+        *ngFor="let item of presets.scene.tiles"
+        [uuid]="item.data.uuid"
+        [title]="item.data.name"
+        [playlist]="item.data.playlist">
+      </app-preset>
+    </div>
 
   </div>
 </div>
