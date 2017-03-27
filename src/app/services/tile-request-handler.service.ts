@@ -2,14 +2,16 @@ import {Injectable} from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
 import {RequestHandlerService} from "./request-handler.service";
+import {DataService} from "../data.service";
 
 @Injectable()
 export class TileRequestHandlerService extends RequestHandlerService {
 
-  private base_url: string = "http://192.168.1.108:8080/";
+  private data_service: DataService;
 
-  constructor(http: Http) {
+  constructor(http: Http, ds: DataService) {
     super(http);
+    this.data_service = ds;
   }
 
   /**
@@ -18,7 +20,7 @@ export class TileRequestHandlerService extends RequestHandlerService {
    * @returns {Observable<Response>}
    */
   public requestPlay(tile_id: string): Observable<Response> {
-    let url: string = this.base_url + "preset?play=" + tile_id;
+    let url: string = this.data_service.base_url + "preset?play=" + tile_id;
     return this.sendGetRequest(url);
   }
 
@@ -28,7 +30,7 @@ export class TileRequestHandlerService extends RequestHandlerService {
    * @returns {Observable<Response>}
    */
   public requestPause(tile_id: string): Observable<Response> {
-    let url: string = this.base_url + "preset?stop=" + tile_id;
+    let url: string = this.data_service.base_url + "preset?stop=" + tile_id;
     return this.sendGetRequest(url);
   }
 
@@ -37,7 +39,7 @@ export class TileRequestHandlerService extends RequestHandlerService {
    * @returns {Observable<Response>}
    */
   public requestStatus(tile_id: string) {
-    let url: string = this.base_url + "preset?is_playing=" + tile_id;
+    let url: string = this.data_service.base_url + "preset?is_playing=" + tile_id;
     return this.sendGetRequest(url);
   }
 
