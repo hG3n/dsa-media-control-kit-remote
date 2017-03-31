@@ -3,10 +3,11 @@
 
     <div *ngIf="data_ready">
       <app-preset
-        *ngFor="let item of presets.scene.tiles"
+        *ngFor="let item of presets.return.scene.tiles"
         [uuid]="item.data.uuid"
         [title]="item.data.name"
-        [playlist]="item.data.playlist">
+        [playlist]="item.data.playlist"
+        [volume]="item.data.settings.volume">
       </app-preset>
     </div>
 

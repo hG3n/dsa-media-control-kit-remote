@@ -38,9 +38,38 @@ export class TileRequestHandlerService extends RequestHandlerService {
    * request tile status from server
    * @returns {Observable<Response>}
    */
-  public requestStatus(tile_id: string) {
+  public requestStatus(tile_id: string): Observable<Response> {
     let url: string = this.data_service.base_url + "preset?is_playing=" + tile_id;
     return this.sendGetRequest(url);
   }
 
+  /**
+   * request volume up
+   * @param tile_id
+   * @returns {Observable<Response>}
+   */
+  public requestVolumeUp(tile_id: string): Observable<Response> {
+    let url: string = this.data_service.base_url + "preset?set_volume=" + tile_id + "&value=50";
+    return this.sendGetRequest(url);
+  }
+
+  /**
+   * request volume down
+   * @param tile_id
+   * @returns {Observable<Response>}
+   */
+  public requestVolumeDown(tile_id: string): Observable<Response> {
+    let url: string = this.data_service.base_url + "preset?set_volume=" + tile_id + "&value=10";
+    return this.sendGetRequest(url);
+  }
+
+  /**
+   * request volume status
+   * @param tile_id
+   * @returns {Observable<Response>}
+   */
+  public requestGetVolume(tile_id: string): Observable<Response> {
+    let url: string = this.data_service.base_url + "preset?get_volume=" + tile_id;
+    return this.sendGetRequest(url);
+  }
 }

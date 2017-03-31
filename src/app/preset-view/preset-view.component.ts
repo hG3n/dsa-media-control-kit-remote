@@ -38,10 +38,11 @@ export class PresetViewComponent implements OnInit {
     this.request_handler.requestTileList()
       .subscribe(
         data => {
-          console.log(data);
+          console.log("preset data: ", data);
           if (data) {
             this.data_ready = true;
             this.presets = data;
+            console.log(this.presets);
           }
         },
         error => {

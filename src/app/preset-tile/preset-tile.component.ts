@@ -24,6 +24,7 @@ export class PresetTileComponent implements OnInit {
   @Input() title: string;
   @Input() uuid: string;
   @Input() playlist: any[];
+  @Input() volume: number;
 
   /**
    * c'tor
@@ -47,10 +48,10 @@ export class PresetTileComponent implements OnInit {
       this.request_handler.requestStatus(this.uuid)
         .subscribe(
           response => {
-            if(response) {
+            if (response) {
               let status: boolean = response["return"][1];
-              if(status != this.is_playing) {
-                if(status) {
+              if (status != this.is_playing) {
+                if (status) {
                   this.uiPlay();
                 } else {
                   this.uiStop();
@@ -109,6 +110,39 @@ export class PresetTileComponent implements OnInit {
   }
 
   /**
+   * lower volume
+   * @constructor
+   */
+  private volumeUp(): void {
+    this.request_handler.requestVolumeUp(this.uuid)
+      .subscribe(
+        data => {
+          if(data) {
+            console.log(data);
+          }
+        },
+        this.logError
+      );
+  }
+
+  /**
+   * increase volume
+   * @constructor
+   */
+  private volumeDown(): void {
+    this.request_handler.requestVolumeDown(this.uuid)
+      .subscribe(
+        data => {
+          if(data) {
+            console.log(data);
+          }
+        },
+        this.logError
+      );
+  }
+
+
+  /**
    * play click animation
    */
   private clickAnimation(): void {
@@ -156,6 +190,10 @@ export class PresetTileComponent implements OnInit {
     this.play_icon.nativeElement.className = "glyphicon glyphicon-play";
     this.is_playing = false;
     this.playingAnimation(false);
+  }
+
+  public logVolume(): void {
+    console.log
   }
 
 }
