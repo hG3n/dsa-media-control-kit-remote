@@ -15,17 +15,23 @@ export class DataService {
    */
   public setBaseUrl(url: string): boolean {
     if(this.checkIP(url)) {
-      this.base_url = "http://" + url + ':8080/';
+      this.base_url = url;
       return true;
     } else {
       return false;
     }
   }
 
+  /**
+   *
+   * @param url
+   * @returns {boolean}
+   */
   public setBaseUrlFromURL(url: string) : boolean {
-    url = url.replace("-", ".");
+    url = url.split(".").join("-");
+    console.log(url);
     if(this.checkIP(url)) {
-      this.base_url = "http://" + url + ':8080/';
+      this.base_url = url;
       return true;
     } else {
       return false;

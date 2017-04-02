@@ -9,16 +9,19 @@ import {TileRequestHandlerService} from "../services/tile-request-handler.servic
 })
 export class PresetTileComponent implements OnInit {
 
-  private is_playing: boolean = false;
   private request_handler: TileRequestHandlerService;
   private error_message: any;
 
   private check_status_process_id: any;
 
+  private is_playing: boolean = false;
+  private volume_is_changing: boolean = false;
+
   // view elements
   @ViewChild('playpauseicon') private play_icon: ElementRef;
   @ViewChild('animcircle') private animation_circle: ElementRef;
   @ViewChild('playbutton') private play_button: ElementRef;
+  @ViewChild('volumeslider') private volume_slider: ElementRef;
 
   // inputs
   @Input() title: string;
@@ -49,20 +52,30 @@ export class PresetTileComponent implements OnInit {
         .subscribe(
           response => {
             if (response) {
-              let status: boolean = response["return"][1];
-              if (status != this.is_playing) {
-                if (status) {
-                  this.uiPlay();
-                } else {
-                  this.uiStop();
-                }
 
+              let playing: boolean = response['return']['is_playing'];
+              let volume: number= response['return']['volume'];
+
+              if(playing != this.is_playing) {
+                  if (playing) {
+                    this.uiPlay();
+                  } else {
+                    this.uiStop();
+                  }
               }
+
+              if(volume != this.volume) {
+                if(!this.volume_is_changing) {
+                  this.uiChangeVolume(volume);
+                }
+              }
+
             }
           },
           this.logError
         )
-    }, 1000);
+
+    }, 500);
   }
 
   /**
@@ -110,37 +123,23 @@ export class PresetTileComponent implements OnInit {
   }
 
   /**
-   * lower volume
-   * @constructor
+   * change volume
+   * @param vol
    */
-  private volumeUp(): void {
-    this.request_handler.requestVolumeUp(this.uuid)
+  public changeVolume(): void {
+
+    // get current volume
+    let vol: number = this.volume_slider.nativeElement.value;
+
+    this.request_handler.requestVolumeChange(this.uuid, vol)
       .subscribe(
         data => {
-          if(data) {
-            console.log(data);
+          if (data) {
           }
         },
         this.logError
       );
   }
-
-  /**
-   * increase volume
-   * @constructor
-   */
-  private volumeDown(): void {
-    this.request_handler.requestVolumeDown(this.uuid)
-      .subscribe(
-        data => {
-          if(data) {
-            console.log(data);
-          }
-        },
-        this.logError
-      );
-  }
-
 
   /**
    * play click animation
@@ -192,8 +191,28 @@ export class PresetTileComponent implements OnInit {
     this.playingAnimation(false);
   }
 
-  public logVolume(): void {
-    console.log
+  /**
+   * change the ui according to the current volume
+   * @param volume
+   */
+  public uiChangeVolume(volume: number): void {
+    this.volume = volume;
+    this.volume_slider.nativeElement.value = volume;
   }
+
+  /**
+   * disable gui volume update
+   */
+  public disableVolumeUpdate(): void {
+    this.volume_is_changing = true;
+  }
+
+  /**
+   * enable volume update
+   */
+  public enableVolumeUpdate(): void {
+    this.volume_is_changing = false;
+  }
+
 
 }

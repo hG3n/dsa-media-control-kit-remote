@@ -13,6 +13,12 @@ import {InitComponent} from './init/init.component';
 import {routing} from "./app.routing";
 import {RequestHandlerService} from "./services/request-handler.service";
 import {DataService} from "./data.service";
+import {ConnectionService} from "./connection.service";
+import { LoginComponent } from './login/login.component';
+import { ClientHomeComponent } from './client-home/client-home.component';
+import { ClientChatComponent } from './client-chat/client-chat.component';
+import { IpdialogComponent } from './ipdialog/ipdialog.component';
+import { IpcheckComponent } from './ipcheck/ipcheck.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,12 @@ import {DataService} from "./data.service";
     PresetTileComponent,
     HomeComponent,
     NaviComponent,
-    InitComponent
+    InitComponent,
+    LoginComponent,
+    ClientHomeComponent,
+    ClientChatComponent,
+    IpdialogComponent,
+    IpcheckComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +41,7 @@ import {DataService} from "./data.service";
     AlertModule.forRoot(),
     routing
   ],
-  providers: [DataService],
+  providers: [DataService, ConnectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

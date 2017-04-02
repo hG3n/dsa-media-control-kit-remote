@@ -60,19 +60,76 @@ div {
   color: #ECEDED;
 }
 
-.preset-status {
-  color: #eceded;
+/**
+ * volume slider style
+ */
+.preset-volume {
   margin-top: 15px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+  margin-bottom: 15px;
+  /*margin-left: 30px;*/
+  /*margin-right: 30px;*/
 }
 
-.preset-volume {
-  color: #eceded;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
+.volume-slider[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 20px;
+  width: 100%;
+  cursor: pointer;
 }
+
+.volume-slider[type=range]:focus {
+  outline: none;
+}
+
+/**
+ * volume slider knob
+ */
+
+/* webkit config */
+.volume-slider[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 1px solid black;
+  background: #ECEDED;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* firefox config*/
+.volume-slider[type=range]::-moz-range-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 1px solid black;
+  background: #ECEDED;
+  cursor: pointer;
+}
+
+/* IE config */
+.volume-slider[type=range]::-ms-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 1px solid black;
+  background: #ECEDED;
+  cursor: pointer;
+}
+
+/**
+ * volume slider track
+ */
+
+.volume-slider[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #ECEDED;
+}
+
 
 /**
  * click animation

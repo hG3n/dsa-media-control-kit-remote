@@ -40,9 +40,14 @@ export class PresetViewComponent implements OnInit {
         data => {
           console.log("preset data: ", data);
           if (data) {
-            this.data_ready = true;
-            this.presets = data;
-            console.log(this.presets);
+
+            if(data["return"]["scene"]["tiles"] > 0 ) {
+              this.data_ready = true;
+              this.presets = data;
+            } else {
+              alert("get your shit together, add some fucking presets");
+            }
+
           }
         },
         error => {
