@@ -4,7 +4,7 @@ import {TileRequestHandlerService} from "../services/tile-request-handler.servic
 @Component({
   selector: 'app-preset',
   templateUrl: './preset-tile.component.html',
-  styleUrls: ['./preset-tile.component.css'],
+  styleUrls: ['./preset-tile.component.scss'],
   providers: [TileRequestHandlerService]
 })
 export class PresetTileComponent implements OnInit {

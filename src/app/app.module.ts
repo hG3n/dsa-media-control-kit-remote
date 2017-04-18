@@ -19,6 +19,9 @@ import { ClientHomeComponent } from './client-home/client-home.component';
 import { ClientChatComponent } from './client-chat/client-chat.component';
 import { IpdialogComponent } from './ipdialog/ipdialog.component';
 import { IpcheckComponent } from './ipcheck/ipcheck.component';
+import { SelectHomeComponent } from './home-select/home-select.component';
+import { MasterHomeComponent } from './master-home/master-home.component';
+import { DeskComponent } from './desk/desk.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { IpcheckComponent } from './ipcheck/ipcheck.component';
     ClientHomeComponent,
     ClientChatComponent,
     IpdialogComponent,
-    IpcheckComponent
+    IpcheckComponent,
+    SelectHomeComponent,
+    MasterHomeComponent,
+    DeskComponent
   ],
   imports: [
     BrowserModule,

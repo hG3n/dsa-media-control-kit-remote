@@ -1,13 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {PresetViewRequestHandlerService} from "../services/preset-view-request-handler.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-preset-view',
   templateUrl: './preset-view.component.html',
-  styleUrls: ['./preset-view.component.css'],
+  styleUrls: ['./preset-view.component.scss'],
   providers: [PresetViewRequestHandlerService]
 })
 export class PresetViewComponent implements OnInit {
+
+  private route: ActivatedRoute;
 
   private request_handler: PresetViewRequestHandlerService;
 
@@ -20,7 +23,9 @@ export class PresetViewComponent implements OnInit {
    * c'tor
    * @param rh
    */
-  constructor(rh: PresetViewRequestHandlerService) {
+  constructor(ar: ActivatedRoute,
+              rh: PresetViewRequestHandlerService) {
+    this.route = ar;
     this.request_handler = rh;
   }
 
@@ -41,12 +46,12 @@ export class PresetViewComponent implements OnInit {
           console.log("preset data: ", data);
           if (data) {
 
-            if(data["return"]["scene"]["tiles"] > 0 ) {
+            // if (data["return"]["scene"]["tiles"] > 0) {
               this.data_ready = true;
               this.presets = data;
-            } else {
-              alert("get your shit together, add some fucking presets");
-            }
+            // } else {
+            //   alert("get your shit together, add some fucking presets");
+            // }
 
           }
         },

@@ -6,7 +6,7 @@ import {ConnectionService} from "../connection.service";
 @Component({
   selector: 'app-ipdialog',
   templateUrl: './ipdialog.component.html',
-  styleUrls: ['./ipdialog.component.css']
+  styleUrls: ['./ipdialog.component.scss']
 })
 export class IpdialogComponent {
 

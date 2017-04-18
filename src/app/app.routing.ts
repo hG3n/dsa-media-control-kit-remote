@@ -6,6 +6,9 @@ import {LoginComponent} from "./login/login.component";
 import {ClientHomeComponent} from "./client-home/client-home.component";
 import {IpdialogComponent} from "./ipdialog/ipdialog.component";
 import {IpcheckComponent} from "./ipcheck/ipcheck.component";
+import {SelectHomeComponent} from "./home-select/home-select.component";
+import {MasterHomeComponent} from "./master-home/master-home.component";
+import {ClientChatComponent} from "./client-chat/client-chat.component";
 
 const app_routes: Routes = [
   {
@@ -29,23 +32,33 @@ const app_routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'home/:ip',
-    component: HomeComponent
-  },
-  {
-    path: 'presets',
-    component: PresetViewComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'home-client',
-    component: ClientHomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: 'select',
+        component: SelectHomeComponent
+      },
+      {
+        path: 'master',
+        component: MasterHomeComponent,
+        children: [
+          {
+            path: 'presets',
+            component: PresetViewComponent
+          }
+        ]
+      },
+      {
+        path: 'client',
+        component: ClientHomeComponent,
+        children: [
+          {
+            path: 'chat',
+            component: ClientChatComponent
+          }
+        ]
+      }
+    ]
   }
 ];
 

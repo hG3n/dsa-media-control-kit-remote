@@ -18,6 +18,7 @@ export class RequestHandlerService {
    */
   public sendGetRequest(url: string): Observable<Response> {
     return this.http.get(url)
+      .timeout(3000)
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -31,6 +32,7 @@ export class RequestHandlerService {
    */
   public sendPostRequest(url: string, body: any): Observable<Response> {
     return this.http.post(url, body)
+      .timeout(3000)
       .map(this.extractData)
       .catch(this.handleError);
   }

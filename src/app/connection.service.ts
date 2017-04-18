@@ -5,6 +5,9 @@ export class ConnectionService {
 
   private session_key: string = "pap_media_control_kit";
 
+  /**
+   * c'tor
+   */
   constructor() {
   }
 
@@ -23,8 +26,6 @@ export class ConnectionService {
    */
   public restoreBaseUrlFromSession(): string {
     let store = localStorage.getItem(this.session_key);
-    console.log("restored");
-    console.log(store);
     return store;
   }
 

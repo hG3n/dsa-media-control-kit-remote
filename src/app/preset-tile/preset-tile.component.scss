@@ -1,24 +1,27 @@
+@import "../../styles/variables";
+
 div {
   margin: 0px;
   padding: 0px;
 }
 
 .preset-widget {
-  border: 1px solid #ECEDED;
+  border: 1px solid $foreground-color-custom;
   margin: 0px;
   overflow: hidden;
 }
 
 .preset-widget-container {
-  background: #2F2F2F;
+  background: $button-bg-custom;
 }
 
 .preset-title {
-  color: #ECEDED;
+  color: $foreground-color-custom;
 }
 
 .preset-title h3 {
   margin-top: 15px;
+  font-size: 12px;
 }
 
 .play-button-container {
@@ -33,7 +36,7 @@ div {
 }
 
 .play-button {
-  border: 4px solid #ECEDED;
+  border: 4px solid $foreground-color-custom;
   border-radius: 50%;
   background: transparent;
   height: 90px;
@@ -52,12 +55,12 @@ div {
 
 .glyphicon-play {
   font-size: 60px;
-  color: #ECEDED;
+  color: $foreground-color-custom;
 }
 
 .glyphicon-stop {
   font-size: 50px;
-  color: #ECEDED;
+  color: $foreground-color-custom;
 }
 
 /**
@@ -93,7 +96,7 @@ div {
   width: 30px;
   border-radius: 30px;
   border: 1px solid black;
-  background: #ECEDED;
+  background: $foreground-color-custom;
   cursor: pointer;
   margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 }
@@ -104,7 +107,7 @@ div {
   width: 30px;
   border-radius: 30px;
   border: 1px solid black;
-  background: #ECEDED;
+  background: $foreground-color-custom;
   cursor: pointer;
 }
 
@@ -114,7 +117,7 @@ div {
   width: 30px;
   border-radius: 30px;
   border: 1px solid black;
-  background: #ECEDED;
+  background: $foreground-color-custom;
   cursor: pointer;
 }
 
@@ -127,7 +130,7 @@ div {
   height: 5px;
   cursor: pointer;
   animate: 0.2s;
-  background: #ECEDED;
+  background: $foreground-color-custom;
 }
 
 

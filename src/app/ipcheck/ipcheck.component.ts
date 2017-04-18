@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {DataService} from "../data.service";
 
@@ -25,7 +25,8 @@ export class IpcheckComponent implements OnInit {
     this.data_service = ds;
   }
 
-  /** * on init lifcycle hook
+  /**
+   * on init lifcycle hook
    */
   ngOnInit() {
     this.route.params.forEach((param: Params) => {

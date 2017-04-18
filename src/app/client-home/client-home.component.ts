@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-client-home',
-  templateUrl: './client-home.component.html',
-  styleUrls: ['./client-home.component.css']
+  template: '<router-outlet></router-outlet>'
 })
 export class ClientHomeComponent implements OnInit {
 
-  constructor() { }
+  private router: Router;
 
+  /**
+   * c'tor
+   * @param r
+   */
+  constructor(r: Router) {
+    this.router = r;
+  }
+
+  /**
+   * on init lifecycle hook
+   */
   ngOnInit() {
+    let link = ["home", "client", "chat"];
+    this.router.navigate(link);
   }
 
 }

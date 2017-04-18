@@ -1,42 +1,18 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
-import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  template: '<router-outlet></router-outlet>'
 })
 export class HomeComponent {
 
   private router: Router;
-  private data_service: DataService;
 
-  /**
-   * c'tor
-   * @param r
-   * @param rhs
-   */
-  constructor(router: Router,
-              ds: DataService) {
-    this.router = router;
-    this.data_service = ds;
-  }
+  constructor(r: Router) {
+    this.router = r;
 
-  /**
-   * continue as master to preset list
-   */
-  public continueAsMaster(): void {
-    let link = ["presets"];
+    let link = ["home", "select"];
     this.router.navigate(link);
   }
-
-  /**
-   * login as client
-   */
-  public continueAsClient(): void {
-    let link = ["login"];
-    this.router.navigate(link);
-  }
-
 }

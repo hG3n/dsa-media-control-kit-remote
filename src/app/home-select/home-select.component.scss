@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .home-container {
   height: 100%;
 }
@@ -6,11 +8,10 @@
   height: 100%;
 }
 
-
 .home-button {
   width: 100%;
   border: 1px solid black;
   height: 150px;
   color: #eceded;
-  background: #2F2F2F;
+  background: $button-bg-custom;
 }
